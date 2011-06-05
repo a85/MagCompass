@@ -47,10 +47,9 @@ public class HomeActivity extends Activity implements SensorEventListener {
     private SensorReader sensorReader;
     private SensorWriter sensorWriter;
 
-    private TextView m0;
+    private TextView textKalman;
+    private TextView textExpo;
     private FrameLayout frameContainer;
-
-    private FrameView frameView;
 
     private KalmanState km0;
 
@@ -62,9 +61,8 @@ public class HomeActivity extends Activity implements SensorEventListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        m0 = (TextView) findViewById(R.id.text_m0);
-        frameContainer = (FrameLayout) findViewById(R.id.frameContainer);
-        frameView = (FrameView) findViewById(R.id.frameView);
+        textKalman = (TextView) findViewById(R.id.text_kalman);
+        textExpo = (TextView) findViewById(R.id.text_expo);
 
         //Values from interactive-matter.eu…
         km0 = new KalmanState(1.3833094, 0.0625, 32.0, 0.043228418);
@@ -150,8 +148,8 @@ public class HomeActivity extends Activity implements SensorEventListener {
                 val = 360 + val;
             }
 
-            m0.setText("m0 Kalman = " + val);
-            frameView.setRotation(val);
+            textKalman.setText("Kalman = " + val);
+            textExpo.setText("Expo = " + displayValues[0]);
         }
     }
 

@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
+              android:orientation="vertical"
         >
     <TextView
-            android:id="@+id/text_m0"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:id="@+id/text_kalman"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
             android:text=""
             android:padding="10dp"
             android:textStyle="bold"
-            android:textSize="16dp"
+            android:textSize="24sp"
             />
-    <FrameLayout android:id="@+id/frameContainer"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-        <com.rickreation.magcompass.FrameView android:id="@+id/frameView"
-                                              android:layout_width="fill_parent"
-                                              android:layout_height="fill_parent"/>
-    </FrameLayout>
-</FrameLayout>
+    <TextView
+            android:id="@+id/text_expo"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text=""
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            />
+</LinearLayout>
 
